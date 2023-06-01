@@ -75,6 +75,9 @@ require('lazy').setup({
   -- Auto close braces and parentheses
   'jiangmiao/auto-pairs',
 
+  -- YAML support
+  'cuducos/yaml.nvim',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -217,6 +220,7 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -249,6 +253,9 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Highlight line under cursor
+vim.o.cursorline=true
 
 -- [[ Basic Keymaps ]]
 
