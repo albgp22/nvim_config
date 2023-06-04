@@ -197,6 +197,8 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  "terrortylor/nvim-comment",
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -527,6 +529,9 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
 })
+
+-- Initialize nvim comment setup. Binding is gcc or gc{motion}
+require('nvim_comment').setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
