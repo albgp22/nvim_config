@@ -78,6 +78,8 @@ require('lazy').setup({
   -- YAML support
   'cuducos/yaml.nvim',
 
+  'scrooloose/nerdtree',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -544,8 +546,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
+
 -- Initialize nvim comment setup. Binding is gcc or gc{motion}
 require('nvim_comment').setup()
+
+-- Map for nerdtree
+vim.api.nvim_set_keymap('n', '<C-n>', ":NERDTreeToggle<CR>", { noremap = true, silent = true });
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
