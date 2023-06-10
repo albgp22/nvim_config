@@ -197,7 +197,21 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  -- Easily comment code
   "terrortylor/nvim-comment",
+
+  -- For go
+  "ray-x/go.nvim",
+
+  -- Change sourroundings https://github.com/tpope/vim-surround
+  "tpope/vim-surround",
+
+  -- Git blame https://github.com/f-person/git-blame.nvim
+  "f-person/git-blame.nvim",
+
+  -- Toggleterm
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
