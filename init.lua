@@ -68,6 +68,9 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+    
+  -- JSONPath in the status bar                                                                                                                                                                                                                                                                                                                      
+  "phelipetls/jsonpath.nvim",
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -552,6 +555,11 @@ require('nvim_comment').setup()
 
 -- Map for nerdtree
 vim.api.nvim_set_keymap('n', '<C-n>', ":NERDTreeToggle<CR>", { noremap = true, silent = true });
+
+-- Show JSONPath in the winbar                                                                                                                                                                                                                                                                                                                       
+if vim.fn.exists("+winbar") == 1 then                                                                                                                                                                                                                                                                                                                
+  vim.opt_local.winbar = "%{%v:lua.require'jsonpath'.get()%}"                                                                                                                                                                                                                                                                                        
+end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
